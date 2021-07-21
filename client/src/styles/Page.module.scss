@@ -1,0 +1,51 @@
+.page {
+    line-height: 1.9;
+    padding: 30px 20%;
+    margin: auto;
+
+    div {
+        font-family: sans-serif-light, 'Helvetica', sans-serif;
+        font-size: 14px;
+        font-weight: lighter;
+
+        h2 { color: #020403 }
+    }
+
+    h2 {
+        color: darkgoldenrod;
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+
+        @media (max-width: 375px) { margin: 4px 0 }
+    }
+
+    p:first-child { display: inline }
+
+    @media (max-width: 768px) { padding: 30px 15% }
+
+    @media (max-width: 414px) {
+            padding: 0 12%;
+
+            h2 { margin: 8px 0 }
+    }
+
+    @media only screen and (max-width: 320px) {
+        padding: 0 13%;
+
+        h2 { margin: 2px 0 }
+
+        div { font-size: 13px }
+    }
+}
+
+.edit {
+    color: grey;
+
+    &:active { color: darkgoldenrod }
+
+    &:hover {
+        color: darkgoldenrod;
+        opacity: 0.7;
+    }
+}

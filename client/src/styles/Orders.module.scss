@@ -1,0 +1,272 @@
+@mixin lastTwoChildBorder {
+    .card {
+        &:nth-last-child(-n + 2) {
+            border-bottom: solid 1px #fcecc6;
+
+            @media (max-width: 480px) { border-bottom: none }
+        }
+    }
+}
+
+@mixin oneFr {
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+
+        &::before { grid-column: span 1 }
+    }
+}
+
+.card {
+    align-items: center;
+    border-top: solid 1px #fcecc6;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 60px;
+    white-space: nowrap;
+
+    &:last-child {
+        border-bottom: solid 1px #fcecc6;
+
+        @media (max-width: 480px) { border-bottom: solid 1px #fcecc6 !important }
+    }
+
+    span:nth-child(2) { justify-self: end }
+
+    span:last-child { justify-self: end }
+}
+
+.container {
+    font-size: 15px;
+    line-height: 3;
+    margin: 30px 0;
+    text-align: center;
+    width: 100vw;
+
+    a {
+        color: grey;
+        font-weight: lighter;
+
+        &:active { color: darkgoldenrod }
+
+        &:last-child {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    }
+}
+
+.table, .table1 {
+    border-collapse: collapse;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    margin: 30px auto;
+    text-align: left;
+    width: 95vw;
+
+    tbody tr {
+        border-bottom: 1px solid #f0f0f0;
+
+        &:first-child { border-top: 1px solid #f0f0f0 }
+    }
+
+    td {
+        padding: 6px;
+        width: 175px;
+    }
+
+    thead {
+        &:after {
+            color: transparent;
+            content: '.';
+            display: block;
+            line-height: 10px;
+        }
+
+        th { padding: 0 6px }
+    }
+
+    p {
+        margin-bottom: 6px;
+
+        &:last-child { margin-bottom: 0 }
+    }
+
+    @media (max-width: 414px) {
+        font-size: 13px;
+
+        p {
+            font-size: 12px;
+
+            &:not(:first-child) { margin-left: 6px }
+        }
+    }
+
+    @media (max-width: 320px) {
+        font-size: 12px;
+
+        p { font-size: 11px }
+    }
+}
+
+.table1 {
+    width: 85vw;
+
+    @media (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+        margin: 10px auto 30px auto;
+
+        td {
+            display: flex;
+            justify-content: space-between;
+            width: 85vw;
+
+            &:first-child::before { content: 'ID:' }
+
+            &:nth-child(2)::before { content: 'Payment:' }
+
+            &:nth-child(3)::before { content: 'Shipping:' }
+
+            &:nth-child(4)::before { content: 'Total price:' }
+
+            &:nth-child(5)::before { content: 'Paid:' }
+
+            &:nth-child(6)::before { content: 'Date:' }
+
+            &:nth-child(7)::before { content: 'Status' }
+
+            &:last-child {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                height: auto;
+
+                & div { margin: 0 6px }
+
+                &::before {
+                    content: 'Swimsuits';
+                    grid-column: span 2;
+                    text-align: center;
+                }
+
+                @include oneFr
+            }
+        }
+
+        thead { display: none }
+
+        tr {
+            display: flex;
+            flex-direction: column;
+        }
+
+        p {
+            margin-bottom: 0;
+
+            &:first-child {
+                margin-left: auto;
+                padding-left: 6px;
+            }
+
+            &:not(:first-child) { margin-left: 10px }
+        }
+
+        @media (max-width: 768px) { @include lastTwoChildBorder }
+    }
+}
+
+@media (max-width: 1366px) {
+    .table {
+        display: flex;
+        justify-content: center;
+        margin: 10px auto 30px auto;
+
+        td {
+            display: flex;
+            height: 12px;
+            width: 85vw;
+            justify-content: space-between;
+            margin-bottom: 6px;
+
+            &:first-child::before { content: 'ID:' }
+
+            &:nth-child(2)::before { content: 'First name:' }
+
+            &:nth-child(3)::before { content: 'Last name:' }
+
+            &:nth-child(4)::before { content: 'Email:' }
+
+            &:nth-child(5)::before { content: 'Phone:' }
+
+            &:nth-child(6)::before { content: 'City:' }
+
+            &:nth-child(7)::before { content: 'Address:' }
+
+            &:nth-child(8)::before { content: 'Apartment:' }
+
+            &:nth-child(9)::before { content: 'ZIP Code:' }
+
+            &:nth-child(10)::before { content: 'Payment:' }
+
+            &:nth-child(11)::before { content: 'Shipping:' }
+
+            &:nth-child(12)::before { content: 'Total price:' }
+
+            &:nth-child(13)::before { content: 'Paid:' }
+
+            &:nth-child(14)::before { content: 'Date:' }
+
+            &:last-child {
+                display: grid;
+                height: auto;
+                grid-template-columns: 1fr 1fr 1fr;
+
+                & div { margin: 0 6px }
+
+                &::before {
+                    content: 'Swimsuits';
+                    grid-column: span 3;
+                    text-align: center;
+                }
+
+                @media (max-width: 768px) {
+                    grid-template-columns: 1fr 1fr;
+
+                    &::before { grid-column: span 2 }
+                }
+
+                @include oneFr
+            }
+        }
+
+        thead { display: none }
+
+        tr {
+            display: flex;
+            flex-direction: column;
+        }
+
+        p {
+            margin-bottom: 0;
+
+            &:first-child {
+                margin-left: auto;
+                padding-left: 6px;
+            }
+
+            &:not(:first-child) { margin-left: 10px }
+        }
+
+        .card {
+            &:nth-last-child(-n + 3) {
+                border-bottom: solid 1px #fcecc6;
+
+                @media (max-width: 768px) { border-bottom: none }
+
+                @media (max-width: 480px) { border-bottom: none }
+            }
+        }
+
+        @media (max-width: 768px) { @include lastTwoChildBorder }
+    }
+}

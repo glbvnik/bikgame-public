@@ -1,0 +1,93 @@
+.content {
+    background-color: white;
+    border-radius: 8px;
+    max-height: 85vh;
+    overflow: scroll;
+    padding: 20px 35px 0 35px;
+    transition: 375ms;
+    transform: scale(0);
+    width: 75%;
+
+    &.active { transform: scale(1) }
+
+    label { white-space: nowrap }
+}
+
+.disabled { color: grey }
+
+.form, .form2 {
+    display: flex;
+    flex-direction: column;
+
+    button { width: 100% !important }
+
+    div {
+        margin-bottom: 10px;
+        margin-top: 8px;
+    }
+}
+
+.image {
+    display: flex;
+    height: 47px;
+    justify-content: space-between;
+    white-space: nowrap;
+
+    div {
+        height: 100%;
+
+        &:not(:first-child) {
+            @media (max-width: 414px) {
+                label { display: none }
+            }
+        }
+    }
+
+    button { margin: 0 !important }
+
+    input { height: 100% }
+
+    label { font-size: 13px }
+
+    @media (max-width: 414px) { white-space: normal }
+}
+
+.form { .image div { width: 33% } }
+
+.form2 { .image div { width: 19% } }
+
+.modal {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    transition: 375ms;
+    width: 100%;
+    z-index: 3;
+
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+.prices {
+    align-items: center;
+    display: flex;
+
+    &:first-child p { margin-right: 10px }
+
+    &:nth-child(2) {
+        margin-bottom: 10px;
+
+        p { margin-right: 14px }
+    }
+
+    label { display: none }
+}

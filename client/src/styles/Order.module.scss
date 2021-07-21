@@ -1,0 +1,44 @@
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.8;
+    margin: auto;
+    text-align: center;
+
+    div:first-child * {
+        color: darkgoldenrod;
+        font-size: 64px;
+        margin-bottom: 15px;
+    }
+
+    p:last-child {
+        font-size: 14px;
+        margin-top: 30px;
+    }
+
+    span { display: inline-block }
+
+    @media (max-width: 375px) {
+        h2 { font-size: 19px }
+
+        p {
+            font-size: 15px;
+
+            &:last-child { font-size: 13px }
+        }
+    }
+
+    @media (max-width: 320px) {
+        h2 { font-size: 18px }
+
+        p {
+            font-size: 14px;
+
+            &:last-child {
+                font-size: 12px;
+                margin-top: 10px;
+            }
+        }
+    }
+}

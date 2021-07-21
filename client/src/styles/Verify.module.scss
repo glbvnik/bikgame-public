@@ -1,0 +1,47 @@
+.container {
+    line-height: 3;
+    margin: auto;
+    text-align: center;
+
+    h2 {
+        color: darkgoldenrod;
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    p { white-space: pre-line }
+
+    span { display: inline-block }
+
+    @media (max-width: 854px) { padding: 0 60px }
+
+    @media (max-width: 540px) {
+        line-height: 2.5;
+        padding: 0 45px;
+
+        h2 { font-size: 20px }
+
+        p { font-size: 15px }
+    }
+
+    @media (max-width: 414px) {
+        margin-top: 10px;
+        padding: 0 16px;
+    }
+
+    @media (max-width: 375px) {
+        padding: 0 8px;
+
+        h2 { font-size: 18px }
+
+        p { font-size: 14px }
+    }
+
+    @media only screen and (max-width: 320px) {
+        padding: 0;
+
+        h2 { font-size: 16px }
+
+        p { font-size: 12px }
+    }
+}

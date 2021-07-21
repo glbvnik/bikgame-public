@@ -1,0 +1,200 @@
+.form {
+    padding: 0 120px;
+
+    h3 { margin-top: 15px }
+
+    @media (max-width: 768px) { padding: 0 80px }
+}
+
+.inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    div {
+        align-items: center;
+        background-color: #f9f9f9;
+        border: solid 2px #f3f3f3;
+        border-radius: 5px;
+        color: grey;
+        display: flex;
+        flex: 41%;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        margin-top: 8px;
+        padding-left: 12px;
+
+        &:focus-within {
+            background-color: white;
+            border-color: #fcecc6;
+        }
+
+        &:hover { opacity: 0.7 }
+
+        input {
+            background-color: #f9f9f9;
+            border: none;
+            padding: 14px 8px;
+            width: 100%;
+
+            &:focus { background-color: white }
+        }
+
+        @media (max-width: 540px) { flex: 100% }
+    }
+
+    label { white-space: nowrap }
+}
+
+.inputs1 div {
+    flex: 100%;
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        margin: 0;
+        -webkit-appearance: none;
+    }
+}
+
+.radio {
+    display: flex;
+    flex-direction: column;
+
+    input {
+        margin: 0 7px 0 0;
+        -webkit-appearance: radio;
+    }
+
+    label {
+        font-size: 15px;
+        margin: 10px 0;
+
+        span {
+            display: inline-block;
+            white-space: nowrap;
+            width: 100px;
+        }
+
+        p {
+            display: inline-block;
+
+            @media (max-width: 540px) {
+                display: block;
+                margin-top: 12px;
+            }
+        }
+
+        @media (max-width: 560px) { font-size: 14px }
+
+        @media (max-width: 540px) { font-size: 15px }
+    }
+}
+
+.total {
+    border: solid #fcecc6;
+    border-width: 2px 0;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+
+    button {
+        background: #020403;
+        border: none;
+        color: #f5f5f5;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        padding: 14px 30px;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+
+        &:last-child h3 { font-size: 18px }
+    }
+
+    h3 {
+        font-size: 20px;
+        margin: 18px 0;
+    }
+
+    p {
+        &:nth-child(2) { margin-bottom: 14px }
+
+        &:last-child { margin-bottom: 18px }
+
+        em { font-weight: normal }
+    }
+}
+
+@media (max-width: 414px) {
+    .form { padding: 0 60px }
+
+    .total {
+        button {
+            margin-top: 0;
+            padding: 24px 30px;
+        }
+
+        div:first-child h3 { font-size: 19px }
+
+        p { font-size: 14px }
+    }
+}
+
+@media (max-width: 375px) {
+    .radio p { font-size: 14px }
+
+    .total {
+        button {
+            margin-top: 10px;
+            padding: 24px 26px;
+        }
+
+        div {
+            &:first-child h3  { font-size: 18px }
+
+            &:last-child h3 { font-size: 16px }
+        }
+
+        p { font-size: 13px }
+    }
+}
+
+@media (max-width: 320px) {
+    .form { padding: 0 45px }
+
+    .radio {
+        font-size: 14px;
+
+        p { font-size: 13px }
+    }
+
+    .inputs {
+        label { font-size: 12px }
+
+        input { font-size: 11px }
+    }
+
+    .total {
+        button {padding: 22px }
+
+        div {
+            &:first-child h3  { font-size: 17px }
+
+            &:last-child h3 { font-size: 15px }
+        }
+
+        p { font-size: 12px }
+    }
+}

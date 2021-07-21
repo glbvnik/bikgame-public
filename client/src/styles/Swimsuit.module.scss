@@ -1,0 +1,95 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+}
+
+.div { display: flex }
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding-right: 60px;
+    width: 50vw;
+
+    button {
+        font-size: 14px;
+        margin-bottom: 40px;
+        margin-top: 15px;
+        width: 100%;
+
+        @media (max-width: 320px) { font-size: 13px }
+    }
+
+    div {
+        margin-bottom: 10px;
+        margin-top: 8px;
+    }
+
+    h3 {
+        font-size: 22px;
+        margin: 0 0 14px 0;
+    }
+
+    label { @media (max-width: 375px) { font-size: 13px } }
+
+    p {
+        font-size: 16px;
+        margin-bottom: 20px;
+
+        &:last-child {
+            font-size: 14px;
+            line-height: 1.9;
+        }
+    }
+
+    @media (max-width: 320px) { input, label, select { font-size: 12px } }
+}
+
+.image {
+    height: 50vw;
+    position: relative;
+    width: 50vw;
+    margin-bottom: 10px;
+
+    &:last-child { margin-bottom: 0 }
+}
+
+.firstImg {
+    margin-bottom: 0;
+    margin-top: 40px;
+
+    @media (orientation: landscape) { margin-top: 0 }
+}
+
+@media (max-width: 540px) {
+    .container { align-items: center }
+
+    .div {
+        align-items: center;
+        align-content: stretch;
+        justify-content: stretch;
+        flex-direction: column;
+    }
+
+    .form {
+        padding: 15px 0 0 0;
+        width: 80%;
+
+        h3 { text-align: center }
+
+        p {
+            text-align: center;
+
+            &:last-child { text-align: left }
+        }
+    }
+
+    .image {
+        height: 80vw;
+        position: relative;
+        width: 80vw;
+    }
+
+    .firstImg { margin-top: 0 }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Express server with PostgreSQL for swimwear eshop",
+  "main": "index.js",
+  "scripts": {
+    "server": "cross-env NODE_ENV=dev nodemon index.js",
+    "start": "node index.js",
+    "client": "cross-env NODE_ENV=dev npm run dev --prefix client",
+    "client:install": "npm install --prefix client",
+    "client:build": "npm run build --prefix client",
+    "client:start": "npm run start --prefix client",
+    "prod": "concurrently \"npm run start\" \"npm run client:start\""
+  },
+  "keywords": [
+    "swimwear",
+    "eshop"
+  ],
+  "author": "Nikolai Golubev <glbvnik@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie": "^0.4.1",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-validator": "^6.10.1",
+    "jsonwebtoken": "^8.5.1",
+    "nodemailer": "^6.6.1",
+    "nodemailer-express-handlebars": "^4.0.0",
+    "pg": "^8.6.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.6.2",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/cookie": "^0.4.0",
+    "concurrently": "^6.2.0",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.7"
+  }
+}

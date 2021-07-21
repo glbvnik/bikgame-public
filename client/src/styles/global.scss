@@ -1,0 +1,55 @@
+* {
+    color: #020403;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    cursor: pointer;
+    font-weight: lighter;
+    text-decoration: none;
+
+    &:active { color: darkgoldenrod }
+
+    &:hover { opacity: 0.7 }
+}
+
+button {
+    &:hover { opacity: 0.9 }
+}
+
+body {
+    font-family: sans-serif-light, 'Helvetica', sans-serif;
+    font-weight: lighter;
+}
+
+h1 {
+    padding-bottom: 2px;
+
+    @media (max-width: 414px) { font-size: 26px !important }
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+label { font-size: 14px }
+
+p {
+    font-family: sans-serif-light, 'Helvetica', sans-serif;    
+    font-weight: lighter;
+}
+
+select {
+    font-size: 13px;
+    -webkit-appearance:none;
+}

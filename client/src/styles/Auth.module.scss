@@ -1,0 +1,49 @@
+.error { margin-bottom: 10px }
+
+.error span {
+    display: block;
+    padding: 4px 0;
+    white-space: normal;
+}
+
+.form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 350px;
+
+    button { margin: 15px 0 20px 0 }
+
+    h2 { white-space: nowrap }
+
+    input { margin-top: 15px }
+
+    p {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 414px) {
+    .form {
+        width: 70%;
+
+        input { margin-top: 10px }
+
+        p { font-size: 11px }
+    }
+}
+
+@media (max-width: 320px) {
+    .error span {
+        display: block;
+        padding: 2px 0;
+    }
+
+    .form {
+        h2 { font-size: 18px }
+
+        p { font-size: 10px }
+    }
+}

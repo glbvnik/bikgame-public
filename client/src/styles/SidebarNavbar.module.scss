@@ -1,0 +1,42 @@
+.black * { color: #020403 !important }
+
+.full {
+    &::before {
+        background-color: darkgoldenrod;
+        border-radius: 50%;
+        bottom: 16px;
+        content: '';
+        display: inline-block;
+        height: 15px;
+        left: 9px;
+        margin-right: -15px;
+        position: relative;
+        width: 15px;
+        z-index: -1;
+    }
+
+    &:hover::before {
+        animation: full 1.8s ease-in-out infinite;
+        animation-direction: alternate;
+        bottom: 24px;
+    }
+}
+
+.h2 { font-size: 22px }
+
+.leftIcon {
+    animation: blink 1.8s ease-in-out infinite;
+    animation-direction: alternate;
+    border-radius: 50%;
+}
+
+@keyframes blink {
+    100% {
+        background-color: rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@keyframes full {
+    100% { box-shadow: 0 0 6px 12px #fcecc6 }
+}
